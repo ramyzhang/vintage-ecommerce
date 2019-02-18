@@ -104,6 +104,7 @@ class ProductProvider extends Component {
   };
 
   removeItem = (id) => {
+    // destructure products array
     let tempProducts = [...this.state.products];
     let tempCart = [...this.state.cart];
     tempCart = tempCart.filter(item => item.id !== id);
@@ -125,9 +126,11 @@ class ProductProvider extends Component {
   clearCart = () => {
     this.setState(() => {
       return { cart: [] };
+      // empty cart array
     }, () => {
         this.setProducts();
         this.addTotals();
+        // callback
       }
     )
   };
